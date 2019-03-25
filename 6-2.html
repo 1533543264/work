@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>6-2 remove item from localStorage</title>
+	<link rel="icon" href="../img/snowflake.png" />
+</head>
+<script>
+window.onload = function(){
+			document.getElementById("addButton").onclick = function(){
+				var a =document.getElementsByClassName("a");
+				var text = document.getElementById("text").value;
+				localStorage.setItem("sticky", text);
+				var dat = localStorage.getItem("sticky");
+				if(document.getElementsByTagName("text").length>=1){
+					for(var i =document.getElementsByTagName("text").length - 1; i >=0; i--){
+						if(dat!=document.getElementsByTagName("text")[i].innerHTML&&i-1==-1){
+               				var pnode = document.createElement("text");
+                			var node=document.createTextNode(dat);
+							var b=document.getElementById("b");
+               	 			pnode.appendChild(node);
+							pnode.style.marginLeft='20px';
+							pnode.style.marginRight='20px';
+							pnode.style.backgroundColor='#e8e8e8';
+							b.append(pnode);
+							
+						}
+						if(dat==document.getElementsByTagName("text")[i].innerHTML){
+							break;
+						}
+					}
+				}
+				if(document.getElementsByTagName("text").length==0){
+					var pnode = document.createElement("text");
+                	var node=document.createTextNode(dat);
+					var b=document.getElementById("b");
+               	 	pnode.appendChild(node);
+					pnode.style.marginLeft='20px';
+					pnode.style.marginRight='20px';
+					pnode.style.backgroundColor='#e8e8e8';
+					b.append(pnode);
+				}
+			}
+			document.getElementById("removeButton").onclick = function(){
+				localStorage.removeItem("sticky");
+                for(var i =document.getElementsByTagName("text").length - 1; i >=0; i--){
+                	b.removeChild(document.getElementsByTagName("text")[i]);
+                }
+				if(window.confirm("是否清除全部数据")){
+					window.localStorage.clear();
+				}
+			}
+		}
+</script>
+<body>
+    <input type="text" value="" id="text"  placeholder="请输入想查找的商品"/>
+	<input type="button" value="搜索" id="addButton" />
+	<p>最近搜索</p>
+	<div class="a" style="float:left;" id = "b">	
+	</div>
+	<img src="3.23.png"，style="CURSOR: hand;float:left" id="removeButton" >
+</body>
+</html>
