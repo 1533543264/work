@@ -8,16 +8,19 @@
     <style>
         img{
           position:relative;
-          transition: all 8s;
+          transform:scale(1.0);
+          opacity:1.0;
+          transition: transform 1.0s linear;
+          
         }
         .container {
             width: 659px;
             height: 560px;
             outline: 1px solid gray;
             position: relative;
-            transition: font-size .8s ease, transform  .8s ease;
+            top:0px;
             overflow: hidden;
-            transition: all 8s;
+            transition:  all 1s 0 ease;
         }
         .container div{
             position: absolute;
@@ -29,75 +32,19 @@
             background-color: rgb(49, 170, 130);
             box-shadow: 10px 10px 10px 10px rgba(12, 119, 146, 0.644) inset;
             transform: translateY(0);
-            transition: transform 8s inset;
-            transition: all 8s;
+            transition: transform 1.0s linear;
+
             }
         .container:hover div{
-          animation:mymove ease-in 8s ;
-          animation-fill-mode: forwards;
-          transition: all 8s;
+
+            transform:translateY(-170px) ;
+
         }
         .container:hover img{
-          animation:mychange ease-in 8s ;
-          animation-fill-mode: forwards;
-          transition: all 8s;
+            transform:scale(1.1) ;
+            opacity: 0.8;
         }
-    @keyframes mychange{　　　
-    0% {
-        opacity:0.25;
 
-        transform:scale(1.0);
-    }
-    25%{
-        opacity:0.75;
- 
-        transform:scale(1.066);
-    }
-    50%{
-        opacity:1;
-
-        transform:scale(1.1);
-    }
-    75%{
-        opacity:0.75;
-
-        transform:scale(1.066);
-    }
-    100% {
-        opacity: 0.25;
-
-        transform:scale(1.033);
-    }
-}
-@keyframes mymove{
-		    0%{
-
-		           top:-20px;
-            }
-            20%{
-
-            top:-50px;
-            }  
-            40%{
-
-            top:-80px;
-            }  
-            60%{
-
-            top:-110px;
-            }
-            80%{
-
-                top:-140px;
-                }
-            100%{
-                
-            top:-170px;
-            }
-         
-		}
-}
-       
     </style>
 </head>
 <body>
