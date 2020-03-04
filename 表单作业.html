@@ -5,45 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .p{
+                font-weight: bold;
+                font-size: 40px;
+                font-family: "黑体";
+                color: #000;
+                margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1>毕业生信息</h1>
-    <fieldset style="width: 500px;height:120px;">
+    <div class="p">
+            <text ><b>学生信息</b></text>
+    </div>
+
+    <fieldset style="width: 300px;height:200px;">
 		<legend style="color: red; ">
-			学生信息
+			学生档案
 		</legend>
 		<form id="testform" method="get" action="">
-        姓&nbsp;&nbsp;名&nbsp;<input type="text" name="name1" autofocus="autofocus" required placeholder="请输入姓名" autofocus="autofocus"/>
+        <text>姓名:</text>
+        <br>
+        <input type="text" name="name1" autofocus="autofocus" required placeholder="请输入姓名" autofocus="autofocus"/>
         <text style="color: red;">*</text>
         <br/>
 		<form id="testform" method="get" action="">
-        学&nbsp;&nbsp;号&nbsp;<input type="number" name="number1" autofocus="autofocus" required placeholder="请输入学号" autofocus="autofocus"/>
+        <text>学号:</text>
+        <input type="number" name="number1" autofocus="autofocus" required placeholder="请输入学号" autofocus="autofocus"/>
         <text style="color: red;">*</text>
         <br/>
         <form id="testform" method="get" action="">
-        手&nbsp;&nbsp;机&nbsp;<input type="tel" name="phone1" autofocus="autofocus" required placeholder="请输入手机号" autofocus="autofocus"/>
+        <text>手机号码:</text>
+        <input type="tel" name="phone1" autofocus="autofocus" required placeholder="请输入手机号" autofocus="autofocus"/>
         <text style="color: red;">*</text>
         <br/>
         <form id="testform" method="get" action="">
-        邮&nbsp;&nbsp;箱&nbsp;<input type="email" name="email1" autofocus="autofocus" required placeholder="请输入邮箱地址" autofocus="autofocus"/>
+        <text>邮箱地址:</text>
+        <input type="email" name="email1" autofocus="autofocus" required placeholder="请输入邮箱地址" autofocus="autofocus"/>
         <text style="color: red;">*</text>
         <br/> 
 	    <br/>
-    </fieldset>
-    <br/>
-    <fieldset style="width: 500px;height:90px;">
-        <legend style="color: red; ">
-            录取情况
-        </legend>
         <form id="testform1s" method="get" action="">
-        录取学校&nbsp;<input type="text" name="school" />    
+        <text>录取学校:</text>
+        <input type="text" name="school" list="mylist"/>    
         <br/>  
         <form id="testform1s" method="get" action="">
-        入学成绩&nbsp;<input type="number" name="score" />    
+        <text>入学成绩:</text>
+        <input type="number" name="score" />    
         <br/>
         <form id="testform1s" method="get" action="">
-        入学时间&nbsp;<input type="date" name="timel" />    
-        <br/>                    
+        <text>入学时间:</text>
+        <input type="date" name="timel" />    
+        <br/>
+        <datalist id="mylist">
+                <option value="湖北经济学院"></option>
+                <option value="华中农业大学"></option>
+                <option value="武汉轻工大学"></option>
+                <option value="武汉商贸学院"></option>
+            </datalist>                    
     </fieldset> 
     <input type="submit" style="margin-top:20px;" value="提交"/>
     </form>
