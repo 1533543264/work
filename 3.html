@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+
+
+    <fieldset style="width: 600px;height:350px;">
+		<legend style="color: red; ">
+			<b>网页换肤</b>
+		</legend>
+		<table cellspacing=10 style=" cellspacing:20;width:500px; height:100px;border-style:solid;padding: 10px;" id="color"  >
+            <tr style="margin-top: -10px;">
+                <th ><div style="background-color: rosybrown;margin-top: -10px;height: 20px;"id="color0" onclick="c()"></div></th>
+                <th ><div style="background-color: royalblue;margin-top: 0px;height: 20px;"id="color1"onclick="d()"></div></th>
+                <th><div style="background-color: seagreen;margin-top: 0px;height: 20px;"id="color2"onclick="e()"></div></th>
+                <th><div style="background-color: skyblue;margin-top: 0px;height: 20px;"id="color3"onclick="f()"></div></th>
+                <th><div style="background-color: teal;margin-top: 0px;height: 20px;"id="color4"onclick="g()"></div></th>
+                <th><div style="background-color:violet;margin-top: 0px;height: 20px;"id="color5"onclick="h()"></div></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <div id="box" style="background-color:rosybrown;">
+                <p>LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，</p>
+                <p>该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+        </div>
+    </fieldset> 
+
+    </form>
+    <script>
+       window.onload=function(){
+        for(var i=0;i<6;i++){
+                var color = document.getElementById("color"+i);
+                var col = "color"+i
+                if(localStorage.length>0){
+                if(col==localStorage.key(0))
+                {   
+                    var box = document.getElementById("box").style;
+                    box.backgroundColor=color.style.backgroundColor;
+                    color.style.marginTop=-10+"px";
+
+                }
+
+                else
+                {
+                    color.style.marginTop=0+"px";
+                  
+                }
+            }
+            }
+
+            
+           
+
+        }
+        function c(color){
+            
+            var color = document.getElementById("color0").style;     
+            var box = document.getElementById("box").style;
+            localStorage.clear();
+            color.marginTop=-10+'px';
+            box.backgroundColor=color.backgroundColor;
+            localStorage.setItem("color0",box.backgroundColor);
+            for(var i=1;i<6;i++){
+                var color = document.getElementById("color"+i).style;
+                color.marginTop=0+'px';
+            }
+
+            
+            
+        }
+        function d(color){
+            var color = document.getElementById("color1").style;     
+            var box = document.getElementById("box").style;
+            localStorage.clear();
+            color.marginTop=-10+'px';
+            box.backgroundColor=color.backgroundColor;
+            localStorage.setItem("color1",box.backgroundColor);
+            for(var i=0;i<6;i++){
+                if(i!=1){
+                    var color = document.getElementById("color"+i).style;
+                color.marginTop=0+'px';
+                }
+                
+            }
+            
+            
+            
+        }
+        function e(color){
+            var color = document.getElementById("color2").style;     
+            var box = document.getElementById("box").style;
+            localStorage.clear();
+            color.marginTop=-10+'px';
+            box.backgroundColor=color.backgroundColor;
+            localStorage.setItem("color2",box.backgroundColor);
+            for(var i=0;i<6;i++){
+                if(i!=2){
+                    var color = document.getElementById("color"+i).style;
+                color.marginTop=0+'px';
+                }
+                
+            }
+            
+            
+        }
+        function f(color){
+            var color = document.getElementById("color3").style;     
+            var box = document.getElementById("box").style;
+            localStorage.clear();
+            color.marginTop=-10+'px';
+            box.backgroundColor=color.backgroundColor;
+            localStorage.setItem("color3",box.backgroundColor);
+            for(var i=0;i<6;i++){
+                if(i!=3){
+                    var color = document.getElementById("color"+i).style;
+                color.marginTop=0+'px';
+                }
+                
+            }
+            
+            
+        }
+        function g(color){
+            var color = document.getElementById("color4").style;     
+            var box = document.getElementById("box").style;
+            localStorage.clear();
+            color.marginTop=-10+'px';
+            box.backgroundColor=color.backgroundColor;
+            localStorage.setItem("color4",box.backgroundColor);
+            for(var i=0;i<6;i++){
+                if(i!=4){
+                    var color = document.getElementById("color"+i).style;
+                color.marginTop=0+'px';
+                }
+                
+            }
+            
+            
+        }
+        function h(color){
+            var color = document.getElementById("color5").style;     
+            var box = document.getElementById("box").style;
+            localStorage.clear();
+            color.marginTop=-10+'px';
+            box.backgroundColor=color.backgroundColor;
+            localStorage.setItem("color5",box.backgroundColor);
+            for(var i=0;i<6;i++){
+                if(i!=5){
+                    var color = document.getElementById("color"+i).style;
+                color.marginTop=0+'px';
+                }
+                
+            }
+            
+            
+        }
+        
+    </script>
+</body>
+</html>
